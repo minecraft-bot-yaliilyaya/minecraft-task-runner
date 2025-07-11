@@ -10,6 +10,7 @@ export class AgentController {
     ) {}
 
     async loop() {
+        const inventory = await this.inventoryRepository.findAll();
 
     }
 }
