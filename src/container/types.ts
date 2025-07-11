@@ -1,7 +1,9 @@
 import {LoopService} from "../service/LoopService";
+import {AgentController} from "../agentController/AgentController";
 
 const TYPES = {
     RouteBuilder: Symbol.for("RouteBuilder"),
+    AgentController: Symbol.for("AgentController"),
 
     Routes: {
         DefaultRoutes: Symbol.for("DefaultRoutes"),

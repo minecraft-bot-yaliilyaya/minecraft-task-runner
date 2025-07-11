@@ -5,8 +5,6 @@ import {Item} from "prismarine-item";
 @injectable()
 export class InventoryRepository {
 
-    private items: Array<Item> = new Array<Item>;
-
     constructor(
     ) {}
 }

@@ -1,6 +1,8 @@
 import { Container } from "inversify";
 import { TYPES } from "./types";
 
+import {AgentController} from "../agentController/AgentController";
+
 import {RouteBuilder} from "../route/RouteBuilder";
 import {DefaultRoutes} from "../route/mapping/DefaultRoutes";
 
@@ -9,9 +11,9 @@ import {DefaultController} from "../controller/DefaultController";
 import {InventoryRepository} from "../repository/InventoryRepository";
 import {LoopService} from "../service/LoopService";
 
-
 const container = new Container();
 
+container.bind<AgentController>(TYPES.AgentController).to(AgentController).inSingletonScope();
 // Route
 container.bind<RouteBuilder>(TYPES.RouteBuilder).to(RouteBuilder).inSingletonScope();
 container.bind<DefaultRoutes>(TYPES.Routes.DefaultRoutes).to(DefaultRoutes).inSingletonScope();
