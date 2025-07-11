@@ -7,6 +7,7 @@ import {DefaultRoutes} from "../route/mapping/DefaultRoutes";
 import {DefaultController} from "../controller/DefaultController";
 
 import {InventoryRepository} from "../repository/InventoryRepository";
+import {LoopService} from "../service/LoopService";
 
 
 const container = new Container();
@@ -20,5 +21,8 @@ container.bind<DefaultController>(TYPES.Controller.DefaultController).to(Default
 
 // Repository
 container.bind<InventoryRepository>(TYPES.Repository.InventoryRepository).to(InventoryRepository).inSingletonScope();
+
+// Service
+container.bind<LoopService>(TYPES.Service.LoopService).to(LoopService).inSingletonScope();
 
 export { container };

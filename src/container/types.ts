@@ -1,3 +1,4 @@
+import {LoopService} from "../service/LoopService";
 
 const TYPES = {
     RouteBuilder: Symbol.for("RouteBuilder"),
@@ -12,6 +13,7 @@ const TYPES = {
         InventoryRepository: Symbol.for("InventoryRepository"),
     },
     Service: {
+        LoopService: Symbol.for("LoopService"),
     }
 };
 
