@@ -1,10 +1,12 @@
-import {LoopService} from "../service/LoopService";
-import {AgentController} from "../agentController/AgentController";
+import {BotClient} from "../client/BotClient";
 
 const TYPES = {
     RouteBuilder: Symbol.for("RouteBuilder"),
     AgentController: Symbol.for("AgentController"),
-
+    Client: {
+        BotClient: Symbol.for("BotClient"),
+        InfoClient: Symbol.for("InfoClient"),
+    },
     Routes: {
         DefaultRoutes: Symbol.for("DefaultRoutes"),
     },
