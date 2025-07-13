@@ -1,3 +1,6 @@
+import {InventoryClient} from "../client/InventoryClient";
+import {EatFoodState} from "../agentController/state/EatFoodState";
+import {AgentClient} from "../client/AgentClient";
 
 const TYPES = {
     RouteBuilder: Symbol.for("RouteBuilder"),
@@ -6,6 +9,8 @@ const TYPES = {
     Client: {
         BotClient: Symbol.for("BotClient"),
         InfoClient: Symbol.for("InfoClient"),
+        InventoryClient: Symbol.for("InventoryClient"),
+        AgentClient: Symbol.for("AgentClient"),
     },
     Routes: {
         DefaultRoutes: Symbol.for("DefaultRoutes"),
@@ -21,6 +26,7 @@ const TYPES = {
     },
     State: {
         FindState: Symbol.for("FindState"),
+        EatFoodState: Symbol.for("EatFoodState"),
     },
 
 };

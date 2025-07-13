@@ -20,7 +20,7 @@ export class LoopService {
                 continue;
             }
             //console.log(["runLoop"]);
-            this.agentController.loop();
+            await this.agentController.loop();
         }
     }
 

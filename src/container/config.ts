@@ -16,6 +16,9 @@ import {InventoryRepository} from "../repository/InventoryRepository";
 import {LoopService} from "../service/LoopService";
 import {StateMachine} from "../agentController/StateMachine";
 import {FindState} from "../agentController/state/FindState";
+import {InventoryClient} from "../client/InventoryClient";
+import {EatFoodState} from "../agentController/state/EatFoodState";
+import {AgentClient} from "../client/AgentClient";
 
 const container = new Container();
 
@@ -29,6 +32,8 @@ container.bind<DefaultRoutes>(TYPES.Routes.DefaultRoutes).to(DefaultRoutes).inSi
 // Client
 container.bind<BotClient>(TYPES.Client.BotClient).to(BotClient).inSingletonScope();
 container.bind<InfoClient>(TYPES.Client.InfoClient).to(InfoClient).inSingletonScope();
+container.bind<InventoryClient>(TYPES.Client.InventoryClient).to(InventoryClient).inSingletonScope();
+container.bind<AgentClient>(TYPES.Client.AgentClient).to(AgentClient).inSingletonScope();
 
 // Controller
 container.bind<DefaultController>(TYPES.Controller.DefaultController).to(DefaultController).inSingletonScope();
@@ -41,5 +46,6 @@ container.bind<LoopService>(TYPES.Service.LoopService).to(LoopService).inSinglet
 
 // State
 container.bind<FindState>(TYPES.State.FindState).to(FindState).inSingletonScope();
+container.bind<EatFoodState>(TYPES.State.EatFoodState).to(EatFoodState).inSingletonScope();
 
 export { container };

@@ -9,7 +9,7 @@ export interface IState {
      * Изменяет текущее состояние на следующее.
      * @returns Promise<void>
      */
-    changeState(): Promise<void>;
+    changeState(): Promise<string|boolean>;
 }
 
 
