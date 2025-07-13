@@ -1,16 +1,16 @@
 import { inject, injectable } from 'inversify';
 import {TYPES} from "../container/types";
 import {InventoryRepository} from "../repository/InventoryRepository";
+import {StateMachine} from "./StateMachine";
 
 @injectable()
 export class AgentController {
 
     constructor(
-        @inject(TYPES.Repository.InventoryRepository) private inventoryRepository: InventoryRepository
+        @inject(TYPES.StateMachine) private stateMachine: StateMachine
     ) {}
 
     async loop() {
-        const inventory = await this.inventoryRepository.findAll();
-
+        const status = await this.stateMachine.run();
     }
 }

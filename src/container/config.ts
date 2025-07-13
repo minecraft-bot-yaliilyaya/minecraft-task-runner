@@ -14,12 +14,14 @@ import {DefaultController} from "../controller/DefaultController";
 import {InventoryRepository} from "../repository/InventoryRepository";
 
 import {LoopService} from "../service/LoopService";
-
-
+import {StateMachine} from "../agentController/StateMachine";
+import {FindState} from "../agentController/state/FindState";
 
 const container = new Container();
 
 container.bind<AgentController>(TYPES.AgentController).to(AgentController).inSingletonScope();
+container.bind<StateMachine>(TYPES.StateMachine).to(StateMachine).inSingletonScope();
+
 // Route
 container.bind<RouteBuilder>(TYPES.RouteBuilder).to(RouteBuilder).inSingletonScope();
 container.bind<DefaultRoutes>(TYPES.Routes.DefaultRoutes).to(DefaultRoutes).inSingletonScope();
@@ -36,5 +38,8 @@ container.bind<InventoryRepository>(TYPES.Repository.InventoryRepository).to(Inv
 
 // Service
 container.bind<LoopService>(TYPES.Service.LoopService).to(LoopService).inSingletonScope();
+
+// State
+container.bind<FindState>(TYPES.State.FindState).to(FindState).inSingletonScope();
 
 export { container };
