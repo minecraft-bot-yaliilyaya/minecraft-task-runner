@@ -18,7 +18,7 @@ export class InventoryRepository {
         }
 
         this.inventory = await this.inventoryClient.findAll();
-        this.timeCache = performance.now() + 10000;
+        this.timeCache = performance.now() + 1000;
 
         return this.inventory;
     }
