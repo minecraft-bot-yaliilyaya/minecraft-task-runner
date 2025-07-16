@@ -1,7 +1,3 @@
-import {InventoryClient} from "../client/InventoryClient";
-import {EatFoodState} from "../agentController/state/EatFoodState";
-import {AgentClient} from "../client/AgentClient";
-
 const TYPES = {
     RouteBuilder: Symbol.for("RouteBuilder"),
     AgentController: Symbol.for("AgentController"),
@@ -11,6 +7,9 @@ const TYPES = {
         InfoClient: Symbol.for("InfoClient"),
         InventoryClient: Symbol.for("InventoryClient"),
         AgentClient: Symbol.for("AgentClient"),
+        DigClient: Symbol.for("DigClient"),
+        MoveClient: Symbol.for("MoveClient"),
+        FindClient: Symbol.for("FindClient"),
     },
     Routes: {
         DefaultRoutes: Symbol.for("DefaultRoutes"),

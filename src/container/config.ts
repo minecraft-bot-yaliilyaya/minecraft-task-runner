@@ -19,6 +19,9 @@ import {FindState} from "../agentController/state/FindState";
 import {InventoryClient} from "../client/InventoryClient";
 import {EatFoodState} from "../agentController/state/EatFoodState";
 import {AgentClient} from "../client/AgentClient";
+import {DigClient} from "../client/DigClient";
+import {MoveClient} from "../client/MoveClient";
+import {FindClient} from "../client/FindClient";
 
 const container = new Container();
 
@@ -34,6 +37,9 @@ container.bind<BotClient>(TYPES.Client.BotClient).to(BotClient).inSingletonScope
 container.bind<InfoClient>(TYPES.Client.InfoClient).to(InfoClient).inSingletonScope();
 container.bind<InventoryClient>(TYPES.Client.InventoryClient).to(InventoryClient).inSingletonScope();
 container.bind<AgentClient>(TYPES.Client.AgentClient).to(AgentClient).inSingletonScope();
+container.bind<DigClient>(TYPES.Client.DigClient).to(DigClient).inSingletonScope();
+container.bind<MoveClient>(TYPES.Client.MoveClient).to(MoveClient).inSingletonScope();
+container.bind<FindClient>(TYPES.Client.FindClient).to(FindClient).inSingletonScope();
 
 // Controller
 container.bind<DefaultController>(TYPES.Controller.DefaultController).to(DefaultController).inSingletonScope();
