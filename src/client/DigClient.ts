@@ -10,7 +10,7 @@ export class DigClient {
     ) {
     }
 
-    public async item(items: [], pointArea: {}) {
+    public async item(items: string[], pointArea: {}) {
         return await this.botClient.post('dig/item', {
                 items: items,
                 point: pointArea

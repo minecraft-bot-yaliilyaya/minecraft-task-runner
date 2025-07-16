@@ -36,7 +36,14 @@ export class InventoryRepository {
         });
     }
 
-    public async hasItems(items: string[], count: number): Promise<boolean> {
-        return false;
+    public async hasItems(itemNames: string[], count: number): Promise<boolean> {
+        const inventory:[] = await this.findAll();
+
+
+        const items = inventory.filter(function(item:{name: string}) {
+            return itemNames.some((name) => name == item.name)
+        });
+        const item: any = items[0];
+        return item?.count >= count;
     }
 }

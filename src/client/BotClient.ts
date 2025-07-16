@@ -10,7 +10,7 @@ export class BotClient {
     }
 
     public async post(name: string, params: {}) {
-        const response = await axios.post('http://localhost:3000/' + name, params, {
+        const response = await axios.post('http://app:3000/' + name, params, {
             headers: {
                 'Content-Type': 'application/json',
             },

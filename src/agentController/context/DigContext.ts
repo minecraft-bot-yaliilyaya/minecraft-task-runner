@@ -7,6 +7,7 @@ export class DigContext {
     items: string[] | null = null;
     count: number = 0;
     area: {} | null = null;
+    areaPosition: {} | null = null;
 
     constructor(
         @inject(TYPES.Repository.InventoryRepository) private inventoryRepository: InventoryRepository,
@@ -28,6 +29,7 @@ export class DigContext {
         this.items = null;
         this.count = 0;
         this.area = null;
+        this.areaPosition = null;
     }
 
     public addItem(item: string, count: number)
