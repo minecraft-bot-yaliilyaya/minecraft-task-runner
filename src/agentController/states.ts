@@ -1,7 +1,8 @@
 
 const States = {
     find: 'find',
-    eatFood: 'eatFood'
+    eatFood: 'eatFood',
+    dig: 'dig'
 };
 
 export { States };

@@ -4,6 +4,7 @@ import {IState} from "./IState";
 import {InventoryRepository} from "../../repository/InventoryRepository";
 import {InfoClient} from "../../client/InfoClient";
 import {States} from "../states";
+import {DigContext} from "../context/DigContext";
 
 @injectable()
 export class FindState implements IState {
@@ -12,6 +13,7 @@ export class FindState implements IState {
     constructor(
         @inject(TYPES.Repository.InventoryRepository) private inventoryRepository: InventoryRepository,
         @inject(TYPES.Client.InfoClient) private infoClient: InfoClient,
+        @inject(TYPES.Context.DigContext) private digContext: DigContext,
     ) {}
 
     async run(): Promise<void> {
@@ -23,6 +25,10 @@ export class FindState implements IState {
         const  food = this.agentInfo.food ?? 20;
         if ( food <= 17 ) {
             return States.eatFood;
+        }
+
+        if (await this.digContext.hasTask()) {
+            return States.dig;
         }
         // console.log(this.agentInfo);
 

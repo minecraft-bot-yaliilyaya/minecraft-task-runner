@@ -22,6 +22,8 @@ import {AgentClient} from "../client/AgentClient";
 import {DigClient} from "../client/DigClient";
 import {MoveClient} from "../client/MoveClient";
 import {FindClient} from "../client/FindClient";
+import {DigContext} from "../agentController/context/DigContext";
+import {DigState} from "../agentController/state/DigState";
 
 const container = new Container();
 
@@ -41,6 +43,9 @@ container.bind<DigClient>(TYPES.Client.DigClient).to(DigClient).inSingletonScope
 container.bind<MoveClient>(TYPES.Client.MoveClient).to(MoveClient).inSingletonScope();
 container.bind<FindClient>(TYPES.Client.FindClient).to(FindClient).inSingletonScope();
 
+// Context
+container.bind<DigContext>(TYPES.Context.DigContext).to(DigContext).inSingletonScope();
+
 // Controller
 container.bind<DefaultController>(TYPES.Controller.DefaultController).to(DefaultController).inSingletonScope();
 
@@ -53,5 +58,6 @@ container.bind<LoopService>(TYPES.Service.LoopService).to(LoopService).inSinglet
 // State
 container.bind<FindState>(TYPES.State.FindState).to(FindState).inSingletonScope();
 container.bind<EatFoodState>(TYPES.State.EatFoodState).to(EatFoodState).inSingletonScope();
+container.bind<DigState>(TYPES.State.DigState).to(DigState).inSingletonScope();
 
 export { container };

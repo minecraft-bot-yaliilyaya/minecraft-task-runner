@@ -5,6 +5,7 @@ import {States} from "./states";
 import {FindState} from "./state/FindState";
 import {IState} from "./state/IState";
 import {EatFoodState} from "./state/EatFoodState";
+import {DigState} from "./state/DigState";
 
 @injectable()
 export class StateMachine {
@@ -15,10 +16,12 @@ export class StateMachine {
 
     constructor(
         @inject(TYPES.State.FindState) private findState: FindState,
-        @inject(TYPES.State.EatFoodState) private eatFoodState: EatFoodState
+        @inject(TYPES.State.EatFoodState) private eatFoodState: EatFoodState,
+        @inject(TYPES.State.DigState) private digState: DigState
     ) {
         this.states[States.find] = findState;
         this.states[States.eatFood] = eatFoodState;
+        this.states[States.dig] = digState;
     }
 
     async run(): Promise<symbol>

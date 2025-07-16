@@ -10,7 +10,7 @@ export class FindClient {
     ) {
     }
 
-    public async item(items: []) {
+    public async item(items: string[]) {
         return await this.botClient.post('find/item', {
                 items: items
             }

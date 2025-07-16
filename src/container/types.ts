@@ -1,3 +1,5 @@
+import {DigState} from "../agentController/state/DigState";
+
 const TYPES = {
     RouteBuilder: Symbol.for("RouteBuilder"),
     AgentController: Symbol.for("AgentController"),
@@ -10,6 +12,10 @@ const TYPES = {
         DigClient: Symbol.for("DigClient"),
         MoveClient: Symbol.for("MoveClient"),
         FindClient: Symbol.for("FindClient"),
+
+    },
+    Context: {
+        DigContext: Symbol.for("DigContext"),
     },
     Routes: {
         DefaultRoutes: Symbol.for("DefaultRoutes"),
@@ -26,6 +32,7 @@ const TYPES = {
     State: {
         FindState: Symbol.for("FindState"),
         EatFoodState: Symbol.for("EatFoodState"),
+        DigState: Symbol.for("DigState"),
     },
 
 };

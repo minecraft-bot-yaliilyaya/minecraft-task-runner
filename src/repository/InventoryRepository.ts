@@ -35,4 +35,8 @@ export class InventoryRepository {
             return foodNames.some((name) => name == item.name)
         });
     }
+
+    public async hasItems(items: string[], count: number): Promise<boolean> {
+        return false;
+    }
 }
